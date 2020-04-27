@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"results-prod.site_1156"},{"v":{"$numberInt":"2"},"key":{"_cardID":{"$numberDouble":"1.0"}},"name":"_cardID_1","ns":"results-prod.site_1156"}],"uuid":"4466446b9bce4e8a942703491799d4d4"}

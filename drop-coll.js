@@ -1,7 +1,7 @@
 var mongoConn = new Mongo();
-var db = mongoConn.getDB("cougar-record");
+var db = mongoConn.getDB("cougar-prod");
 
-regExp = /Card_.+/;
+regExp = /site_.+/;
 db.getCollectionNames()
     .filter
     (
@@ -14,7 +14,17 @@ db.getCollectionNames()
     (
         function(name)
         {
-            db.getCollection(name).drop();
+            db[name].find({_key : {$exists : true}})
+                .forEach
+                (
+                    function(obj)
+                    {
+                        printJson(obj);
+                        //db[name].delete(obj);
+                    }
+                );
         }
     );
 
+
+db.getCollectionNames().forEach(function(name){  db[name].find({_key : {$exists : true}}).forEach( function(obj){ printJson(obj);});});
